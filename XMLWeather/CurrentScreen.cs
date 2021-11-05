@@ -43,6 +43,10 @@ namespace XMLWeather
             date2.Text = Form1.days[2].date;
             min2.Text = $"°{Form1.days[2].tempLow}";
             max2.Text = $"°{Form1.days[2].tempHigh}";
+
+            date3.Text = Form1.days[3].date;
+            min3.Text = $"°{Form1.days[3].tempLow}";
+            max3.Text = $"°{Form1.days[3].tempHigh}";
         }
 
         //A method for all the weather conditions

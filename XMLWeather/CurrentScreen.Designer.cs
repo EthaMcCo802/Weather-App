@@ -51,6 +51,9 @@
             this.icon = new System.Windows.Forms.PictureBox();
             this.locationInput = new System.Windows.Forms.TextBox();
             this.locationFinderLabel = new System.Windows.Forms.Label();
+            this.date3 = new System.Windows.Forms.Label();
+            this.max3 = new System.Windows.Forms.Label();
+            this.min3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.icon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -175,7 +178,7 @@
             this.max1.Location = new System.Drawing.Point(349, 295);
             this.max1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.max1.Name = "max1";
-            this.max1.Size = new System.Drawing.Size(50, 34);
+            this.max1.Size = new System.Drawing.Size(50, 18);
             this.max1.TabIndex = 66;
             // 
             // min1
@@ -185,7 +188,7 @@
             this.min1.Location = new System.Drawing.Point(422, 296);
             this.min1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.min1.Name = "min1";
-            this.min1.Size = new System.Drawing.Size(43, 33);
+            this.min1.Size = new System.Drawing.Size(43, 17);
             this.min1.TabIndex = 67;
             // 
             // date2
@@ -194,7 +197,7 @@
             this.date2.BackColor = System.Drawing.Color.DarkGray;
             this.date2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.date2.ForeColor = System.Drawing.Color.Black;
-            this.date2.Location = new System.Drawing.Point(473, 348);
+            this.date2.Location = new System.Drawing.Point(473, 332);
             this.date2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.date2.Name = "date2";
             this.date2.Size = new System.Drawing.Size(39, 18);
@@ -205,20 +208,20 @@
             // 
             this.max2.BackColor = System.Drawing.Color.DarkGray;
             this.max2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.max2.Location = new System.Drawing.Point(349, 347);
+            this.max2.Location = new System.Drawing.Point(349, 332);
             this.max2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.max2.Name = "max2";
-            this.max2.Size = new System.Drawing.Size(50, 34);
+            this.max2.Size = new System.Drawing.Size(50, 18);
             this.max2.TabIndex = 71;
             // 
             // min2
             // 
             this.min2.BackColor = System.Drawing.Color.DarkGray;
             this.min2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.min2.Location = new System.Drawing.Point(422, 348);
+            this.min2.Location = new System.Drawing.Point(422, 332);
             this.min2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.min2.Name = "min2";
-            this.min2.Size = new System.Drawing.Size(43, 33);
+            this.min2.Size = new System.Drawing.Size(43, 18);
             this.min2.TabIndex = 72;
             // 
             // label2
@@ -229,9 +232,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(352, 235);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(129, 22);
+            this.label2.Size = new System.Drawing.Size(143, 22);
             this.label2.TabIndex = 73;
-            this.label2.Text = "Next two days";
+            this.label2.Text = "Next three days";
             // 
             // highLabel
             // 
@@ -302,11 +305,47 @@
             this.locationFinderLabel.TabIndex = 80;
             this.locationFinderLabel.Text = "Type in a location";
             // 
+            // date3
+            // 
+            this.date3.AutoSize = true;
+            this.date3.BackColor = System.Drawing.Color.DarkGray;
+            this.date3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.date3.ForeColor = System.Drawing.Color.Black;
+            this.date3.Location = new System.Drawing.Point(473, 379);
+            this.date3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.date3.Name = "date3";
+            this.date3.Size = new System.Drawing.Size(39, 18);
+            this.date3.TabIndex = 81;
+            this.date3.Text = "Date";
+            // 
+            // max3
+            // 
+            this.max3.BackColor = System.Drawing.Color.DarkGray;
+            this.max3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.max3.Location = new System.Drawing.Point(349, 379);
+            this.max3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.max3.Name = "max3";
+            this.max3.Size = new System.Drawing.Size(50, 18);
+            this.max3.TabIndex = 82;
+            // 
+            // min3
+            // 
+            this.min3.BackColor = System.Drawing.Color.DarkGray;
+            this.min3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.min3.Location = new System.Drawing.Point(422, 379);
+            this.min3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.min3.Name = "min3";
+            this.min3.Size = new System.Drawing.Size(50, 18);
+            this.min3.TabIndex = 83;
+            // 
             // CurrentScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
+            this.Controls.Add(this.min3);
+            this.Controls.Add(this.max3);
+            this.Controls.Add(this.date3);
             this.Controls.Add(this.locationFinderLabel);
             this.Controls.Add(this.locationInput);
             this.Controls.Add(this.tempLabel);
@@ -363,5 +402,8 @@
         private System.Windows.Forms.PictureBox icon;
         private System.Windows.Forms.TextBox locationInput;
         private System.Windows.Forms.Label locationFinderLabel;
+        private System.Windows.Forms.Label date3;
+        private System.Windows.Forms.Label max3;
+        private System.Windows.Forms.Label min3;
     }
 }

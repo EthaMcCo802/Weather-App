@@ -24,22 +24,22 @@ namespace XMLWeather
             ExtractForecast();
             ExtractCurrent();
             
-            // open weather screen for todays weather
+            //Opens weather screen for todays weather
             CurrentScreen cs = new CurrentScreen();
             this.Controls.Add(cs);
         }
 
         private void ExtractForecast()
         {
+            //Changes the weather forecast for the inputted location 
             city = CurrentScreen.input;
+            //Gathers the weather forecast from an api 
             XmlReader reader = XmlReader.Create("http://api.openweathermap.org/data/2.5/forecast/daily?q=" + city + "&mode=xml&units=metric&cnt=7&appid=3f2e224b815c0ed45524322e145149f0");
 
             while (reader.Read())
             {
-
-                //TODO: create a day object
                 Day day = new Day();
-                //TODO: fill day object with required data
+
                 reader.ReadToFollowing("time");
                 day.date = reader.GetAttribute("day");
                 reader.ReadToFollowing("symbol");
@@ -48,18 +48,18 @@ namespace XMLWeather
                 reader.ReadToFollowing("temperature");
                 day.tempLow = Round(reader.GetAttribute("min"));
                 day.tempHigh = Round(reader.GetAttribute("max"));
-                //TODO: if day object not null add to the days list
+
                 days.Add(day);
             }
         }
 
         private void ExtractCurrent()
         {
+            //Changes the weather forecast for the inputted location 
             city = CurrentScreen.input;
-            // current info is not included in forecast file so we need to use this file to get it
+            //Gathers the current weather from a specified location
             XmlReader reader = XmlReader.Create("http://api.openweathermap.org/data/2.5/weather?q=" + city + "&mode=xml&units=metric&appid=3f2e224b815c0ed45524322e145149f0");
 
-            //TODO: find the city and current temperature and add to appropriate item in days list
             reader.ReadToFollowing("city");
             days[0].location = reader.GetAttribute("name");
 
@@ -69,6 +69,7 @@ namespace XMLWeather
 
         private decimal Round(string number)
         {
+            //Rounds the decimal point to a whole number
             decimal d = decimal.Round(Convert.ToDecimal(number), 0);
             return d;
         }

@@ -11,27 +11,31 @@ namespace XMLWeather
 {
     public partial class CurrentScreen : UserControl
     {
+        //Global variables
         public static string input;
         public CurrentScreen()
         {
             InitializeComponent();
             DisplayCurrent();
             displayForecast();
+            //Gathers the location from the input textbox
             input = locationInput.Text;
         }
         public void DisplayCurrent()
         {
+            //Displays the current weather forecast from the api
             cityOutput.Text = Form1.days[0].location;
             currentDateLabel.Text = Form1.days[0].date;
             tempLabel.Text = $"°{Form1.days[0].currentTemp}";
             minOutput.Text = $"°{Form1.days[0].tempLow}";
             maxOutput.Text = $"°{Form1.days[0].tempHigh}";
+            //Displays the weather conditions
             Conditions();
         }
 
         public void displayForecast()
         {
-
+            //Displays the upcoming weather forecast
             date1.Text = Form1.days[1].date;
             min1.Text = $"°{Form1.days[1].tempLow}";
             max1.Text = $"°{ Form1.days[1].tempHigh}";

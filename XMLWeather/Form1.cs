@@ -15,7 +15,7 @@ namespace XMLWeather
     {
         //Global variables
         public static List<Day> days = new List<Day>();
-        string city = "Stratford,ON";
+        public static string city = "Stratford,CA";
 
         public Form1()
         {
@@ -29,10 +29,8 @@ namespace XMLWeather
             this.Controls.Add(cs);
         }
 
-        private void ExtractForecast()
+        public static void ExtractForecast()
         {
-            //Changes the weather forecast for the inputted location 
-            city = CurrentScreen.input;
             //Gathers the weather forecast from an api 
             XmlReader reader = XmlReader.Create("http://api.openweathermap.org/data/2.5/forecast/daily?q=" + city + "&mode=xml&units=metric&cnt=7&appid=3f2e224b815c0ed45524322e145149f0");
 
@@ -53,10 +51,8 @@ namespace XMLWeather
             }
         }
 
-        private void ExtractCurrent()
+        public static void ExtractCurrent()
         {
-            //Changes the weather forecast for the inputted location 
-            city = CurrentScreen.input;
             //Gathers the current weather from a specified location
             XmlReader reader = XmlReader.Create("http://api.openweathermap.org/data/2.5/weather?q=" + city + "&mode=xml&units=metric&appid=3f2e224b815c0ed45524322e145149f0");
 
@@ -67,7 +63,7 @@ namespace XMLWeather
             days[0].currentTemp = Round(reader.GetAttribute("value"));
         }
 
-        private decimal Round(string number)
+        public static decimal Round(string number)
         {
             //Rounds the decimal point to a whole number
             decimal d = decimal.Round(Convert.ToDecimal(number), 0);

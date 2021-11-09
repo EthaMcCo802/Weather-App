@@ -54,7 +54,14 @@
             this.date3 = new System.Windows.Forms.Label();
             this.max3 = new System.Windows.Forms.Label();
             this.min3 = new System.Windows.Forms.Label();
+            this.icon1 = new System.Windows.Forms.PictureBox();
+            this.icon2 = new System.Windows.Forms.PictureBox();
+            this.icon3 = new System.Windows.Forms.PictureBox();
+            this.enterButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.icon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icon1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icon2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icon3)).BeginInit();
             this.SuspendLayout();
             // 
             // cityOutput
@@ -128,12 +135,12 @@
             // tempLabel
             // 
             this.tempLabel.AutoSize = true;
-            this.tempLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tempLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tempLabel.ForeColor = System.Drawing.Color.Black;
-            this.tempLabel.Location = new System.Drawing.Point(33, 162);
+            this.tempLabel.Location = new System.Drawing.Point(4, 23);
             this.tempLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tempLabel.Name = "tempLabel";
-            this.tempLabel.Size = new System.Drawing.Size(422, 51);
+            this.tempLabel.Size = new System.Drawing.Size(474, 55);
             this.tempLabel.TabIndex = 26;
             this.tempLabel.Text = "Current Temperature";
             // 
@@ -141,11 +148,11 @@
             // 
             this.currentDateLabel.AutoSize = true;
             this.currentDateLabel.BackColor = System.Drawing.Color.Transparent;
-            this.currentDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.currentDateLabel.ForeColor = System.Drawing.Color.Black;
-            this.currentDateLabel.Location = new System.Drawing.Point(3, 27);
+            this.currentDateLabel.Location = new System.Drawing.Point(5, 166);
             this.currentDateLabel.Name = "currentDateLabel";
-            this.currentDateLabel.Size = new System.Drawing.Size(126, 55);
+            this.currentDateLabel.Size = new System.Drawing.Size(104, 46);
             this.currentDateLabel.TabIndex = 43;
             this.currentDateLabel.Text = "Date";
             // 
@@ -279,7 +286,7 @@
             // icon
             // 
             this.icon.BackColor = System.Drawing.Color.Transparent;
-            this.icon.Location = new System.Drawing.Point(258, -42);
+            this.icon.Location = new System.Drawing.Point(245, -45);
             this.icon.Name = "icon";
             this.icon.Size = new System.Drawing.Size(327, 216);
             this.icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -338,16 +345,62 @@
             this.min3.Size = new System.Drawing.Size(50, 18);
             this.min3.TabIndex = 83;
             // 
+            // icon1
+            // 
+            this.icon1.BackColor = System.Drawing.Color.DarkGray;
+            this.icon1.Location = new System.Drawing.Point(291, 289);
+            this.icon1.Name = "icon1";
+            this.icon1.Size = new System.Drawing.Size(38, 35);
+            this.icon1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.icon1.TabIndex = 84;
+            this.icon1.TabStop = false;
+            // 
+            // icon2
+            // 
+            this.icon2.BackColor = System.Drawing.Color.DarkGray;
+            this.icon2.Location = new System.Drawing.Point(291, 327);
+            this.icon2.Name = "icon2";
+            this.icon2.Size = new System.Drawing.Size(38, 35);
+            this.icon2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.icon2.TabIndex = 85;
+            this.icon2.TabStop = false;
+            // 
+            // icon3
+            // 
+            this.icon3.BackColor = System.Drawing.Color.DarkGray;
+            this.icon3.Location = new System.Drawing.Point(291, 368);
+            this.icon3.Name = "icon3";
+            this.icon3.Size = new System.Drawing.Size(38, 35);
+            this.icon3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.icon3.TabIndex = 86;
+            this.icon3.TabStop = false;
+            // 
+            // enterButton
+            // 
+            this.enterButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.enterButton.Location = new System.Drawing.Point(494, 177);
+            this.enterButton.Name = "enterButton";
+            this.enterButton.Size = new System.Drawing.Size(55, 35);
+            this.enterButton.TabIndex = 87;
+            this.enterButton.Text = "Enter";
+            this.enterButton.UseVisualStyleBackColor = true;
+            this.enterButton.Click += new System.EventHandler(this.enterButton_Click);
+            // 
             // CurrentScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MidnightBlue;
+            this.BackColor = System.Drawing.Color.SkyBlue;
+            this.Controls.Add(this.enterButton);
+            this.Controls.Add(this.icon3);
+            this.Controls.Add(this.icon2);
+            this.Controls.Add(this.icon1);
+            this.Controls.Add(this.locationInput);
+            this.Controls.Add(this.locationFinderLabel);
+            this.Controls.Add(this.icon);
             this.Controls.Add(this.min3);
             this.Controls.Add(this.max3);
             this.Controls.Add(this.date3);
-            this.Controls.Add(this.locationFinderLabel);
-            this.Controls.Add(this.locationInput);
             this.Controls.Add(this.tempLabel);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.maxOutput);
@@ -368,11 +421,13 @@
             this.Controls.Add(this.currentDateLabel);
             this.Controls.Add(this.cityOutput);
             this.Controls.Add(this.currentOutput);
-            this.Controls.Add(this.icon);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CurrentScreen";
             this.Size = new System.Drawing.Size(575, 406);
             ((System.ComponentModel.ISupportInitialize)(this.icon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icon1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icon2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icon3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -405,5 +460,9 @@
         private System.Windows.Forms.Label date3;
         private System.Windows.Forms.Label max3;
         private System.Windows.Forms.Label min3;
+        private System.Windows.Forms.PictureBox icon1;
+        private System.Windows.Forms.PictureBox icon2;
+        private System.Windows.Forms.PictureBox icon3;
+        private System.Windows.Forms.Button enterButton;
     }
 }

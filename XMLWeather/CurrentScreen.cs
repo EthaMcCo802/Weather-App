@@ -969,6 +969,7 @@ namespace XMLWeather
 
         private void enterButton_Click(object sender, EventArgs e)
         {
+            //Checks to see if a valid city has been entered and displays an error message if not
             try
             {
                 Form1.city = locationInput.Text;

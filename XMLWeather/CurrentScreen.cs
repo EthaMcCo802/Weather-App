@@ -76,6 +76,10 @@ namespace XMLWeather
             {
                 icon.Image = Properties.Resources.FewClouds;
             }
+            if (Form1.days[0].condition == 802)
+            {
+                icon.Image = Properties.Resources.ScatteredClouds;
+            }
             else if (Form1.days[0].condition == 803)
             {
                 icon.Image = Properties.Resources.BrokenClouds;
@@ -88,6 +92,10 @@ namespace XMLWeather
             if (Form1.days[1].condition == 801)
             {
                 icon1.Image = Properties.Resources.FewClouds;
+            }
+            if (Form1.days[0].condition == 802)
+            {
+                icon.Image = Properties.Resources.ScatteredClouds;
             }
             else if (Form1.days[1].condition == 803)
             {
@@ -102,6 +110,10 @@ namespace XMLWeather
             {
                 icon2.Image = Properties.Resources.FewClouds;
             }
+            if (Form1.days[0].condition == 802)
+            {
+                icon.Image = Properties.Resources.ScatteredClouds;
+            }
             else if (Form1.days[2].condition == 803)
             {
                 icon2.Image = Properties.Resources.BrokenClouds;
@@ -114,6 +126,10 @@ namespace XMLWeather
             if (Form1.days[3].condition == 801)
             {
                 icon3.Image = Properties.Resources.FewClouds;
+            }
+            if (Form1.days[0].condition == 802)
+            {
+                icon.Image = Properties.Resources.ScatteredClouds;
             }
             else if (Form1.days[3].condition == 803)
             {
@@ -962,24 +978,8 @@ namespace XMLWeather
                 Form1.ExtractForecast();
                 Form1.ExtractCurrent();
                 Conditions();
-
-                cityOutput.Text = Form1.days[0].location;
-                currentDateLabel.Text = Form1.days[0].date;
-                tempLabel.Text = $"{Form1.days[0].currentTemp}°";
-                minOutput.Text = $"{Form1.days[0].tempLow}°";
-                maxOutput.Text = $"{Form1.days[0].tempHigh}°";
-
-                date1.Text = Form1.days[1].date;
-                min1.Text = $"{Form1.days[1].tempLow}°";
-                max1.Text = $"{ Form1.days[1].tempHigh}°";
-
-                date2.Text = Form1.days[2].date;
-                min2.Text = $"{Form1.days[2].tempLow}°";
-                max2.Text = $"{Form1.days[2].tempHigh}°";
-
-                date3.Text = Form1.days[3].date;
-                min3.Text = $"{Form1.days[3].tempLow}°";
-                max3.Text = $"{Form1.days[3].tempHigh}°";
+                DisplayCurrent();
+                displayForecast();
             }
             catch
             {
